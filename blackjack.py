@@ -34,9 +34,12 @@ while play:
     hand=[]
     dealer=[]
     drawCard(hand)
+    drawCard(dealer)
     drawCard(hand)
+    drawCard(dealer)
     print("Your cards: " + cardsInHand(hand))
     print("Your score:",chkHand(hand))
+    print("Dealers cards: "+str(dealer[0])+", *")
     if chkHand(hand)==21:
         print("""Winner, winner, chicken dinner!
 Blackjack!""")
@@ -53,8 +56,6 @@ Blackjack!""")
                 break
             else:
                 print("You have made a mistake.")
-        drawCard(dealer)
-        drawCard(dealer)
         while chkHand(dealer)<=16:
             drawCard(dealer)
         print("Dealer's cards: " + cardsInHand(dealer))
