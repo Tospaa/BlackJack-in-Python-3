@@ -39,52 +39,52 @@ while play:
     drawCard(hand)
     drawCard(dealer)
     drawCard(hand)
-    print("Kartlarınız: " + cardsInHand(hand))
-    print("El toplamı:",chkHand(hand))
-    print("Krupiyenin kartları: {0}, *".format(dealer[0]))
+    print("Your cards: " + cardsInHand(hand))
+    print("Sum of your hand:",chkHand(hand))
+    print("Dealer's cards: {0}, *".format(dealer[0]))
     if chkHand(hand)==21:
         print("""Winner, winner, chicken dinner!
-Blackjack Yaptınız!""")
+Blackjack!""")
         myScore+=2
     else:
         while True:
-            switch=input("Bir kart daha almak istiyor musunuz?(e/h)")
-            if switch == "e" or switch == "E":
+            switch=input("Would you like to take another card?(y/n)")
+            if switch == "y" or switch == "Y":
                 drawCard(hand)
-                print("Kartlarınız: " + cardsInHand(hand))
-                print("El toplamı:",chkHand(hand))
+                print("Your cards: " + cardsInHand(hand))
+                print("Sum of your hand:",chkHand(hand))
                 if chkHand(hand)>=21:
                     break
-            elif switch == "h" or switch == "H":
+            elif switch == "n" or switch == "N":
                 break
             else:
-                print("Yanlış bir seçim yaptınız.")
+                print("You've made a mistake.")
         while chkHand(dealer)<=16:
             drawCard(dealer)
-        print("Krupiye kartları: " + cardsInHand(dealer))
-        print("Krupiye el toplamı:",chkHand(dealer))
+        print("Dealer's cards: " + cardsInHand(dealer))
+        print("Sum of dealer's cards:",chkHand(dealer))
         if chkHand(hand)>21:
-            print("Kaybettiniz.")
+            print("You lost.")
             dealerScore+=1
         elif chkHand(dealer)>21 or chkHand(hand)>chkHand(dealer):
-            print("Kazandınız.")
+            print("You won.")
             myScore+=1
         elif chkHand(hand)<chkHand(dealer):
-            print("Kaybettiniz.")
+            print("You lost.")
             dealerScore+=1
         else:
-            print("Dostluk kazandı.")
+            print("It's nobody's game.")
     while True:
-        switch=input("Tekrar oynamak istiyor musunuz?(e/h)")
-        if switch == "e" or switch == "E":
+        switch=input("Would you like to play again?(y/n)")
+        if switch == "y" or switch == "Y":
             break
-        elif switch == "h" or switch == "H":
+        elif switch == "n" or switch == "N":
             play=False
             break
         else:
-            print("Yanlış bir seçim yaptınız.")
+            print("You've made a mistake.")
 
-print("+--- Skorunuz --- Krupiye Skoru ---+")
-print("        {0}              {1}".format(myScore,dealerScore))
-print("+----------------------------------+")
-input("Çıkmak için Enter tuşuna basınız.")
+print("+--- Your Score --- Dealer's Score ---+")
+print("        {0}               {1}".format(myScore,dealerScore))
+print("+-------------------------------------+")
+input("Press Enter to exit.")
