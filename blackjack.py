@@ -28,7 +28,7 @@ def chkHand(l):
             toplam=toplam+10
         return toplam
 
-myScore=0
+myScore=0  # you can start with higher score, if you want :)
 dealerScore=0
 play=True
 while play:
