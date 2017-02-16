@@ -29,7 +29,7 @@ def chkHand(l):
         return toplam
 
 myScore=0  # you can start with higher score, if you want :)
-dealerScore=0
+dealerScore=0  # negative score is acceptable :)
 play=True
 while play:
     cards=[1,2,3,4,5,6,7,8,9,10,10,10,10]*4
